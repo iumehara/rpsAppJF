@@ -1,5 +1,7 @@
-Workflow if you're going to do a workshop: 
+##はじめに 
 
-1. Create a copy of this repo in your own github account that's public so that you can use it during the workshop.
-2. Use your copy during the workshop.
-3. Send pull requests if there's things we need to add/update to the skeleton.
+1. このレポジトリーをgit clone
+2. `web`のディレクトリで依存ライブラリをインストール `cd web/ && npm install`
+3. テストを起動 `npm run test`
+4. アプリを起動 `npm run start`
+
