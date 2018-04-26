@@ -67,4 +67,30 @@ describe("GameScreen", () => {
 
         expect(domFixture).toBeTruthy()
     })
+
+    it('plays the game with submitted p1 and p2 throws', () => {
+        const playMethodSpy = jasmine.createSpy()
+        const gameSpy = {
+            play: playMethodSpy
+        }
+
+        ReactDOM.render(
+            <GameScreen game={gameSpy}/>,
+            domFixture
+        )
+
+        const p1Throw = document.querySelector('input[name="p1Throw"]')
+        p1Throw.value = 'rock'
+        ReactTestUtils.Simulate.change(p1Throw)
+
+        const p2Throw = document.querySelector('input[name="p2Throw"]')
+        p2Throw.value = 'paper'
+        ReactTestUtils.Simulate.change(p2Throw)
+
+
+        document.querySelector('button').click()
+
+
+        expect(playMethodSpy).toHaveBeenCalled()
+    })
 })
